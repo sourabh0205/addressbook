@@ -8,10 +8,7 @@ node {
 	  version = '2.3.5' 
    }
    stage('Build') {
-        withMaven(
-        maven: 'maven', // Maven installation declared in the Jenkins "Global Tool Configuration"
-        // Maven settings.xml file defined with the Jenkins Config File Provider Plugin
-        mavenLocalRepo: '/opt/maven/conf') {
+         {
 
       if (isUnix()) {
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore test -Pfunctional-test -DSkipUTs=true -DskipTests=true"
