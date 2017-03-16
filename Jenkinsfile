@@ -10,7 +10,7 @@ node {
    stage('Build') {
         withMaven(
         maven: 'maven', // Maven installation declared in the Jenkins "Global Tool Configuration"
-        mavenSettingsConfig: 'settings.xml', // Maven settings.xml file defined with the Jenkins Config File Provider Plugin
+        // Maven settings.xml file defined with the Jenkins Config File Provider Plugin
         mavenLocalRepo: '/opt/maven/conf') {
 
       if (isUnix()) {
