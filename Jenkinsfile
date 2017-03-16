@@ -13,10 +13,10 @@ stage('UNITTEST') {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
    }
-stage('Cobertura') {
+stage('Review') {
       // Run the maven build
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' -pmd:pmd"
+         sh "'${mvnHome}/bin/mvn'pmd:pmd"
       } else {
          bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore clean package/)
       }
